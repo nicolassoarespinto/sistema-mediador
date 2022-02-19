@@ -1,7 +1,6 @@
 import pandas as pd
 import re
 import os
-# import beutiful soup package
 import bs4 as bs
 import json
 
@@ -85,9 +84,6 @@ def readAcordoInfo(n_solic):
 
         # return a dictionary with key n_solic = n_solic, and clausulas = clausulas and cnpjs = cnpjs
         return {'n_solic' : n_solic, 'clausulasDescr' : clausulasDescr, 'clausulasTitles' : clausulasTitles, 'cnpjs' : cnpjs}    
-
-        # return pd.DataFrame({'n_solic' : n_solic, 'clausulas' : clausulas, 'cnpjs' : cnpjs})
-        
 
 
 
