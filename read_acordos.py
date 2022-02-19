@@ -6,9 +6,6 @@ import bs4 as bs
 import json
 
 
-# Read metadatafile of acordos
-acordos = pd.read_csv('data/acordos/acordos_metadata.csv')
-
 
 def formatFilename(n_solic):
 
@@ -94,19 +91,26 @@ def readAcordoInfo(n_solic):
 
 
 
-# Create a dataframe with the information of each acordo
-acordos_info = pd.DataFrame(columns=['n_solic', 'clausulas', 'cnpjs'])
+if __name__ == '__main__':
 
 
-# Create a dictionary with the information of each acordo with  the key n_solic
-acordos_info = {}
-
-# Read the information of each acordo and store in the dictionary acordos_info
-for n_solic in acordos['n_solic']:
-    acordos_info[n_solic] = readAcordoInfo(n_solic)
+    # Read metadatafile of acordos
+    acordos = pd.read_csv('data/acordos/acordos_metadata.csv')
 
 
-# Save the dictionary
-with open('data/acordos/acordos_info.json', 'w') as f:
-    json.dump(acordos_info, f, indent= 4)
-    
+    # Create a dataframe with the information of each acordo
+    acordos_info = pd.DataFrame(columns=['n_solic', 'clausulas', 'cnpjs'])
+
+
+    # Create a dictionary with the information of each acordo with  the key n_solic
+    acordos_info = {}
+
+    # Read the information of each acordo and store in the dictionary acordos_info
+    for n_solic in acordos['n_solic']:
+        acordos_info[n_solic] = readAcordoInfo(n_solic)
+
+
+    # Save the dictionary
+    with open('data/acordos/acordos_info.json', 'w') as f:
+        json.dump(acordos_info, f, indent= 4)
+        

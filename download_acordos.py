@@ -96,7 +96,7 @@ if __name__ == '__main__':
                 pass
             
             # Sleep for 10 seconds
-            time.sleep(10)
+            # time.sleep(10)
 
 
     # Print message that the program finished downloading the files
